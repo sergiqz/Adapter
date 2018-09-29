@@ -19,6 +19,7 @@ public:
     float area();
     int perimetro();
     point *getpoints();
+    void setpoints(int x, int y);
 };
 
 #endif // CIRCLE_H

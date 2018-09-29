@@ -15,6 +15,7 @@ class rectangulo : public cuadrilatero
 		void draw();
 		float area();
 
+
 		
 };
 #endif

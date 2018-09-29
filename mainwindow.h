@@ -3,7 +3,7 @@
 #include "adaptercir.h"
 #include "adapterrec.h"
 #include <QMainWindow>
-
+#include <QMouseEvent>
 namespace Ui {
 class MainWindow;
 }

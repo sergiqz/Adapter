@@ -22,3 +22,6 @@ void circle::draw(){
 point* circle::getpoints(){
     return puntos;
 }
+void circle::setpoints(int x, int y){
+    puntos->set_x_y(x,y);
+}

@@ -22,9 +22,9 @@ MainWindow::MainWindow(QWidget *parent) :
     //cuadri->draw(q);
    // q->drawRect(60,60,3,3);
    // ui->base->setPixmap(*pixmap);
-    reg= new rectangulo(60,60);
+    reg= new rectangulo(100,100);
     adp= new adapterrec();
-    cir= new circle(40);
+    cir= new circle(60);
     adc= new adaptercir();
 }
 
@@ -37,13 +37,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_cuadradito_currentIndexChanged(int index)
 {
-    switch(ui->cuadradito->currentIndex())
+    switch(index)
         {
             case 1:
             adp->draw(reg,q);
             break;
             case 2:
+            reg->setpoints(100,60);
             adc->draw(cir,q);
+
             break;
         }
     ui->base->setPixmap(*pixmap);

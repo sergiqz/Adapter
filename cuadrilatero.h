@@ -15,9 +15,10 @@ class cuadrilatero : public shape
         cuadrilatero(int _an=0,int _l1=0,int _l2=0,int _l3=0,int _l4=0);
         ~cuadrilatero();
 		void draw();
-		float area();
+        float area();
 		int perimetro();
         point *getpoints();
+        void setpoints(int x, int y);
 		
 };
 #endif
