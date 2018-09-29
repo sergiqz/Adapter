@@ -15,7 +15,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+    void mousePressEvent(QMouseEvent *event);
 private slots:
     void on_cuadradito_currentIndexChanged(int index);
 

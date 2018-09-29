@@ -40,14 +40,18 @@ void MainWindow::on_cuadradito_currentIndexChanged(int index)
     switch(index)
         {
             case 1:
+
             adp->draw(reg,q);
             break;
             case 2:
-            reg->setpoints(100,60);
             adc->draw(cir,q);
-
             break;
         }
     ui->base->setPixmap(*pixmap);
 
+}
+void MainWindow::mousePressEvent(QMouseEvent *event){
+    cir->setpoints(event->x(),event->y());
+    reg->setpoints(event->x(),event->y());
+    cout<<event->x()<<endl;
 }
