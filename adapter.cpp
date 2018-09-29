@@ -6,6 +6,8 @@ Adapter::Adapter()
 
 
 }
-void draw(QPainter *painter){
-    painter->drawRect(60,60,3,3);
+void Adapter::draw(Rectangulo<int> *regctangulo,QPainter *painter){
+    reg=regctangulo;
+
+    painter->drawRect(reg->getaltura(),reg->getbase(),3,3);
 }

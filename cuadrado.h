@@ -1,11 +1,11 @@
-#ifndef RECTANGULO_H
-#define RECTANGULO_H
+#ifndef CUADRADO_H
+#define CUADRADO_H
 #include "cuadrilatero.cpp"
 #include <math.h>
 
 class Cuadrado : public Cuadrilatero<int>
 {
-    private:
+   /* private:
         int b,a;
     public:
         Cuadrado(int base,int altura);
@@ -14,5 +14,6 @@ class Cuadrado : public Cuadrilatero<int>
         int area();
         int perimetro();
         void dibujar();
+        */
 };
 #endif // CUADRADO_H

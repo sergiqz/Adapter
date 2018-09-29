@@ -15,7 +15,7 @@ private:
 
 public:
     Adapter();
-    void draw(QPainter *painter);
+    void draw(Rectangulo<int> *regctangulo,QPainter *painter);
 
 };
 

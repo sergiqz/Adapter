@@ -10,17 +10,13 @@ class Fabrica
 {
     public:
        // Forma(){}
-        virtual ~Fabrica();
+        virtual ~Fabrica(){}
     	virtual Forma<int>* crear_cuadrilatero()=0;
     	virtual Forma<int>* crear_circulos()=0;
 };
 
 
 
-Fabrica::~Fabrica()
-{
-
-}
 
 
 

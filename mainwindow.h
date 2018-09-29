@@ -16,11 +16,12 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_comboBox_currentIndexChanged(int index);
+    void on_cuadradito_currentIndexChanged(int index);
 
 private:
     Ui::MainWindow *ui;
-    Adapter *cuadri;
+    Adapter *adp;
+    Rectangulo<int> *reg;
     QPixmap *pixmap;
     QPen *lapiz;
     QPainter *q;
