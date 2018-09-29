@@ -22,8 +22,8 @@ MainWindow::MainWindow(QWidget *parent) :
     //cuadri->draw(q);
    // q->drawRect(60,60,3,3);
    // ui->base->setPixmap(*pixmap);
-    reg = new Rectangulo<int>();
-    adp= new Adapter();
+    reg= new rectangulo(60,60);
+    adp= new adapterrec();
 
 }
 
@@ -38,9 +38,9 @@ void MainWindow::on_cuadradito_currentIndexChanged(int index)
 {
     switch(ui->cuadradito->currentIndex())
         {
-            case 1:reg->setbase(200);
-            reg->setaltura(200);
+            case 1:
             adp->draw(reg,q);
+
         }
     ui->base->setPixmap(*pixmap);
 

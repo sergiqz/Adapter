@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "adapter.h"
+#include "adaptercir.h"
+#include "adapterrec.h"
 #include <QMainWindow>
 
 namespace Ui {
@@ -12,7 +13,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
@@ -20,8 +21,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    Adapter *adp;
-    Rectangulo<int> *reg;
+    adapterrec *adp;
+    rectangulo *reg;
     QPixmap *pixmap;
     QPen *lapiz;
     QPainter *q;

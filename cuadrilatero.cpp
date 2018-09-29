@@ -1,66 +1,31 @@
-#ifndef CUADRILATERO_H
-#define CUADRILATERO_H
-#include "forma.cpp"
+#include "cuadrilatero.h"
 #include <cmath>
-
-template <class T>
-class Cuadrilatero : public Forma<T>
+cuadrilatero::cuadrilatero(int _an=0,int _l1=0,int _l2=0,int _l3=0,int _l4=0)
 {
-
-    private:
-        T l1,l2,l3,l4,an;
-
-    public:
-
-        Cuadrilatero(T lado1,T lado2,T lado3,T lado4, T angul);
-        virtual ~Cuadrilatero();
-        T area();
-
-        T perimetro();
-        void dibujar();   
-};
-
-template <class T>
-Cuadrilatero<T>::Cuadrilatero(T lado1,T lado2,T lado3,T lado4, T angul){
-    an=angul;
-    l1=lado1;
-    l2=lado2;
-    l3=lado3;
-    l4=lado4;
+	an=_an;
+	l1=_l1;
+	l2=_l2;
+	l3=_l3;
+	l4=_l4;
 }
-template <class T>
-Cuadrilatero<T>::~Cuadrilatero()
+cuadrilatero::~cuadrilatero()
 {
 
 }
-
-
-
-
-
-
-template <class T>
-T Cuadrilatero<T>::area(){
-    int s=perimetro()/2;
-    float a= pow((s-l1)*(s-l2)*(s-l3)*(s-l4)-l1*l2*l3*l4*(pow((cos(an/2)*3.1416/180),2)),0.5);
-    return a;
+void cuadrilatero::draw()
+{
+	cout<< "cuadrilatero"<<endl;
 }
-
-
-template <class T>
-T Cuadrilatero<T>::perimetro(){
-    return l1+l2+l3+l4;
+int cuadrilatero::perimetro()
+{
+	return l1+l2+l3+l4;
 }
-
-template <class T>
-void Cuadrilatero<T>::dibujar(){
-    cout<<"Cuadrilatero"<<endl;
+float cuadrilatero::area()
+{
+	int s=perimetro()/2;
+	float A= pow((s-l1)*(s-l2)*(s-l3)*(s-l4)-l1*l2*l3*l4*(pow((cos(an/2)*3.1416/180),2)),0.5);
+	return A;
 }
-
-
-
-
-     
-
-
-#endif
+point* cuadrilatero::getpoints(){
+    return puntos;
+}
