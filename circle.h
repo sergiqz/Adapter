@@ -1,6 +1,7 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
 #include <iostream>
+#include <cmath>
 #include "shape.h"
 #include "point.h"
 using namespace std;
@@ -20,6 +21,7 @@ public:
     int perimetro();
     point *getpoints();
     void setpoints(int x, int y);
+
 };
 
 #endif // CIRCLE_H

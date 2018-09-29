@@ -6,14 +6,17 @@
 #include <QColor>
 #include <QPixmap>
 #include <QPen>
+#include "factoryrec.h"
 
 class adapterrec
 {
     rectangulo *reg;
+    factoryrec *fac;
 
 public:
-    adapterrec();
-    void draw(rectangulo *rectangulo,QPainter *painter);
+    adapterrec(rectangulo *rectangulo);
+
+    void draw(QPainter *painter);
 
 };
 

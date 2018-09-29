@@ -28,6 +28,7 @@ private:
     QPixmap *pixmap;
     QPen *lapiz;
     QPainter *q;
+    bool c;
 
 
 };

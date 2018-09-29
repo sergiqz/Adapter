@@ -33,3 +33,29 @@ point* cuadrilatero::getpoints(){
 void cuadrilatero::setpoints(int x, int y){
     puntos->set_x_y(x,y);
 }
+
+void cuadrilatero::set_lado(int _l1,int _l2,int _l3,int _l4){
+    l1=_l1;
+    l2=_l2;
+    l3=_l3;
+    l4=_l4;
+}
+void cuadrilatero::get_lados(int &_l1,int &_l2,int &_l3,int &_l4){
+
+    _l1=l1;
+    _l2=l2;
+    _l3=l3;
+    _l4=l4;
+}
+
+
+void cuadrilatero::set_color(string _color){
+    color=_color;
+}
+
+
+string cuadrilatero::get_color(){
+    return color;
+}
+
+

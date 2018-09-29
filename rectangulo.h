@@ -14,7 +14,9 @@ class rectangulo : public cuadrilatero
         ~rectangulo();
 		void draw();
 		float area();
-
+        void set_lados(int _b,int _h);
+        int get_base();
+        int get_altura();
 
 		
 };
