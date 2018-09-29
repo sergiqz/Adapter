@@ -13,11 +13,18 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = NULL);
     ~MainWindow();
     void mousePressEvent(QMouseEvent *event);
 private slots:
     void on_cuadradito_currentIndexChanged(int index);
+
+    void on_lado_editingFinished();
+
+    void on_radio_editingFinished();
+
+
+    void on_bases_editingFinished();
 
 private:
     Ui::MainWindow *ui;
@@ -29,7 +36,7 @@ private:
     QPen *lapiz;
     QPainter *q;
     bool c;
-
+    int x,y;
 
 };
 

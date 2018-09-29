@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //cuadri->draw(q);
    // q->drawRect(60,60,3,3);
    // ui->base->setPixmap(*pixmap);
-    reg= new rectangulo(100,100);
+    reg= new rectangulo(reg->get_base(),reg->get_altura());
     adp= new adapterrec(reg);
     cir= new circle(60);
     adc= new adaptercir();
@@ -57,4 +57,32 @@ void MainWindow::on_cuadradito_currentIndexChanged(int index)
         }
 
 
+}
+
+void MainWindow::on_lado_editingFinished()
+{
+
+    int x= ui->lado->text().toInt();
+    reg->set_lado(x);
+
+}
+
+
+
+
+
+
+
+void MainWindow::on_radio_editingFinished()
+{
+    int r= ui->radio->text().toInt();
+   // cir->set_radio(r);
+}
+
+
+
+void MainWindow::on_bases_editingFinished()
+{
+    int y= ui->bases->text().toInt();
+    reg->set_base(y);
 }
