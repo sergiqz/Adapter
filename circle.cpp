@@ -3,6 +3,7 @@
 circle::circle(int radio)
 {
     r=radio;
+    puntos=new point();
 }
 circle::~circle()
 {

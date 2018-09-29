@@ -1,5 +1,5 @@
 #include "rectangulo.h"
-rectangulo::rectangulo(int _b=0,int _h=0):cuadrilatero(180,_b,_b,_h,_h){
+rectangulo::rectangulo(int _b,int _h):cuadrilatero(180,_b,_b,_h,_h){
 	b=_b;
 	h=_h;
 }

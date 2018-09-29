@@ -14,7 +14,7 @@ private:
 public:
 
     circle(int radio=5);
-    virtual ~circle();
+    ~circle();
     void draw();
     float area();
     int perimetro();

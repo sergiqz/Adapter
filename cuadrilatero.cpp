@@ -1,12 +1,13 @@
 #include "cuadrilatero.h"
 #include <cmath>
-cuadrilatero::cuadrilatero(int _an=0,int _l1=0,int _l2=0,int _l3=0,int _l4=0)
+cuadrilatero::cuadrilatero(int _an,int _l1,int _l2,int _l3,int _l4)
 {
 	an=_an;
 	l1=_l1;
 	l2=_l2;
 	l3=_l3;
 	l4=_l4;
+    puntos=new point();
 }
 cuadrilatero::~cuadrilatero()
 {

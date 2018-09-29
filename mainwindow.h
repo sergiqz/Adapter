@@ -23,6 +23,8 @@ private:
     Ui::MainWindow *ui;
     adapterrec *adp;
     rectangulo *reg;
+    circle *cir;
+    adaptercir *adc;
     QPixmap *pixmap;
     QPen *lapiz;
     QPainter *q;

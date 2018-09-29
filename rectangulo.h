@@ -10,8 +10,8 @@ class rectangulo : public cuadrilatero
 	private:
 		int b,h;
 	public:
-		rectangulo(int _b,int _h);
-		~rectangulo();
+        rectangulo(int _b=30,int _h=30);
+        ~rectangulo();
 		void draw();
 		float area();
 

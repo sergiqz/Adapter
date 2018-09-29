@@ -38,12 +38,17 @@
     </property>
     <item>
      <property name="text">
-      <string/>
+      <string>none</string>
      </property>
     </item>
     <item>
      <property name="text">
       <string>Cuadrado</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Circulo</string>
      </property>
     </item>
    </widget>

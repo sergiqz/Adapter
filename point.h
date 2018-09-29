@@ -9,8 +9,8 @@ class point
     protected:
         int x,y;
 public:
-        point(int _x = 0, int _y=0);
-        virtual ~point();
+        point(int _x = 60, int _y=60);
+        ~point();
         void set_x(int _x);
         void set_y(int _y);
         void set_x_y(int _x,int _y);

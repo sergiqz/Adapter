@@ -24,7 +24,8 @@ MainWindow::MainWindow(QWidget *parent) :
    // ui->base->setPixmap(*pixmap);
     reg= new rectangulo(60,60);
     adp= new adapterrec();
-
+    cir= new circle(40);
+    adc= new adaptercir();
 }
 
 MainWindow::~MainWindow()
@@ -40,7 +41,10 @@ void MainWindow::on_cuadradito_currentIndexChanged(int index)
         {
             case 1:
             adp->draw(reg,q);
-
+            break;
+            case 2:
+            adc->draw(cir,q);
+            break;
         }
     ui->base->setPixmap(*pixmap);
 
