@@ -22,25 +22,15 @@ MainWindow::MainWindow(QWidget *parent) :
     //factoryrec::get_instance();
 
     rectangulo*aux=new rectangulo(10,10);
-    rectangulo*xd=new rectangulo(200,10);
+
     factoryrec::get_instance()->set_altura(100);
     aux->setpoints(100,100);
-    xd->setpoints(200,200);
     reg.push_back(aux);
-    reg.push_back(xd);
-
-
 
     circle*aux2=new circle(10);
+    factorycir::get_instance();
     aux2->setpoints(60,60);
     cir.push_back(aux2);
-
-    adapterrec*tmp1=new adapterrec(aux);
-    tmp1->draw(q);
-
-    adapterrec*tmp2=new adapterrec(xd);
-    tmp2->draw(q);
-
 
 
 }
@@ -56,23 +46,20 @@ void MainWindow::mousePressEvent(QMouseEvent *event){
         aux1->set_base(ui->bases->text().toInt());
         aux1->setpoints(event->x(),event->y());
         reg.push_back(aux1);
+        ui->base->setPixmap(*pixmap);
         adapterrec*tmp3=new adapterrec(aux1);
         tmp3->draw(q);
         adp.push_back(tmp3);
 
     }
     else{
-        circle*aux=new circle(ui->radio->text().toInt());
+        circle*aux=new circle();
+        aux->set_radio(ui->radio->text().toInt());
         aux->setpoints(event->x(),event->y());
         cir.push_back(aux);
-        adaptercir*tmp2=new adaptercir(aux);
-        tmp2->draw(q);}
-
-    ui->base->setPixmap(*pixmap);
-    pixmap->fill();
-    for (int y = 0; y < adp.size(); ++y)
-    {
-        adp[y]->draw(q);
+        adaptercir* tmp2=new adaptercir(aux);
+        tmp2->draw(q);
+        adc.push_back(tmp2);
     }
 
 
@@ -101,9 +88,13 @@ void MainWindow::on_lado_editingFinished()
 {
 
 
-
+    pixmap->fill();
     int x= ui->lado->text().toInt();
     reg[0]->set_altura(x);
+    for (int y = 0; y < adp.size(); y++)
+    {
+        adp[y]->draw(q);
+    }
 }
 
 
@@ -114,15 +105,24 @@ void MainWindow::on_lado_editingFinished()
 
 void MainWindow::on_radio_editingFinished()
 {
+    pixmap->fill();
     int r= ui->radio->text().toInt();
     cir[0]->set_radio(r);
+    for (int y = 0; y < adc.size(); y++)
+    {
+        adc[y]->draw(q);
+    }
 }
 
 
 
 void MainWindow::on_bases_editingFinished()
 {
-
+    pixmap->fill();
     int y= ui->bases->text().toInt();
     reg[0]->set_base(y);
+    for (int y = 0; y < adp.size(); y++)
+    {
+        adp[y]->draw(q);
+    }
 }
