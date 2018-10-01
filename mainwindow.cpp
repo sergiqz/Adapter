@@ -14,7 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QColor color("black");
     lapiz=new QPen(color);
-
+    color.setNamedColor("green");
+    lapiz->setColor(color);
 
     ui->base->setPixmap(*pixmap);
     q=new QPainter(pixmap);
@@ -25,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     factoryrec::get_instance()->set_altura(100);
     aux->setpoints(100,100);
-    reg.push_back(aux);
+    vecrect.push_back(aux);
 
     circle*aux2=new circle(10);
     factorycir::get_instance();
@@ -40,33 +41,29 @@ MainWindow::~MainWindow()
     delete ui;
 }
 void MainWindow::mousePressEvent(QMouseEvent *event){
+     ui->base->setPixmap(*pixmap);
     if(!c){
         rectangulo*aux1=new rectangulo();
-        aux1->set_altura(ui->lado->text().toInt());
-        aux1->set_base(ui->bases->text().toInt());
+        aux1->set_altura(altura);
+        aux1->set_base(base);
         aux1->setpoints(event->x(),event->y());
-        reg.push_back(aux1);
-        ui->base->setPixmap(*pixmap);
+        vecrect.push_back(aux1);
         adapterrec*tmp3=new adapterrec(aux1);
         tmp3->draw(q);
-        adp.push_back(tmp3);
+        adaprect.push_back(tmp3);
 
     }
     else{
         circle*aux=new circle();
-        aux->set_radio(ui->radio->text().toInt());
+        aux->set_radio(radio);
         aux->setpoints(event->x(),event->y());
         cir.push_back(aux);
         adaptercir* tmp2=new adaptercir(aux);
         tmp2->draw(q);
-        adc.push_back(tmp2);
+        adapcir.push_back(tmp2);
     }
-
-
-
+    ui->base->setPixmap(*pixmap);
 }
-
-
 void MainWindow::on_cuadradito_currentIndexChanged(int index)
 {
     switch(index)
@@ -78,51 +75,38 @@ void MainWindow::on_cuadradito_currentIndexChanged(int index)
             case 2:
             c=1;
             break;
-
         }
-
-
 }
-
 void MainWindow::on_lado_editingFinished()
 {
-
-
     pixmap->fill();
-    int x= ui->lado->text().toInt();
-    reg[0]->set_altura(x);
-    for (int y = 0; y < adp.size(); y++)
-    {
-        adp[y]->draw(q);
-    }
+    altura= ui->lado->text().toInt();
+    vecrect[0]->set_altura(altura);
+    refresh();
+
 }
-
-
-
-
-
-
-
 void MainWindow::on_radio_editingFinished()
 {
     pixmap->fill();
-    int r= ui->radio->text().toInt();
-    cir[0]->set_radio(r);
-    for (int y = 0; y < adc.size(); y++)
-    {
-        adc[y]->draw(q);
-    }
+    radio= ui->radio->text().toInt();
+    cir[0]->set_radio(radio);
+    refresh();
 }
-
-
-
 void MainWindow::on_bases_editingFinished()
 {
     pixmap->fill();
-    int y= ui->bases->text().toInt();
-    reg[0]->set_base(y);
-    for (int y = 0; y < adp.size(); y++)
+    base= ui->bases->text().toInt();
+    vecrect[0]->set_base(base);
+    refresh();
+}
+void MainWindow::refresh(){
+    for (int y = 0; y < int(adaprect.size()); y++)
     {
-        adp[y]->draw(q);
+        adaprect[y]->draw(q);
     }
+    for (int j=0; j<int(adapcir.size()); j++)
+    {
+        adapcir[j]->draw(q);
+    }
+
 }

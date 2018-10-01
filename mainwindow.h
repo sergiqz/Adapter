@@ -17,6 +17,7 @@ public:
     explicit MainWindow(QWidget *parent = NULL);
     ~MainWindow();
     void mousePressEvent(QMouseEvent *event);
+    void refresh();
 private slots:
     void on_cuadradito_currentIndexChanged(int index);
 
@@ -29,15 +30,15 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    vector<adapterrec*>adp;
-    vector<rectangulo*>reg;
+    vector<adapterrec*>adaprect;
+    vector<rectangulo*>vecrect;
     vector<circle*>cir;
-    vector<adaptercir*>adc;
+    vector<adaptercir*>adapcir;
     QPixmap *pixmap;
     QPen *lapiz;
     QPainter *q;
     bool c;
-    int x,y;
+    int altura,base,radio;
 
 };
 

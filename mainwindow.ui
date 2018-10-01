@@ -17,10 +17,10 @@
    <widget class="QLabel" name="base">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>50</y>
-      <width>251</width>
-      <height>221</height>
+      <x>10</x>
+      <y>10</y>
+      <width>381</width>
+      <height>281</height>
      </rect>
     </property>
     <property name="text">
@@ -31,8 +31,8 @@
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>10</y>
-      <width>69</width>
+      <y>40</y>
+      <width>121</width>
       <height>22</height>
      </rect>
     </property>
@@ -56,8 +56,8 @@
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>110</y>
-      <width>41</width>
+      <y>100</y>
+      <width>121</width>
       <height>20</height>
      </rect>
     </property>
@@ -66,8 +66,8 @@
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>170</y>
-      <width>113</width>
+      <y>200</y>
+      <width>121</width>
       <height>20</height>
      </rect>
     </property>
@@ -76,8 +76,8 @@
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>240</y>
-      <width>69</width>
+      <y>250</y>
+      <width>121</width>
       <height>22</height>
      </rect>
     </property>
@@ -86,7 +86,7 @@
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>220</y>
+      <y>230</y>
       <width>46</width>
       <height>13</height>
      </rect>
@@ -99,7 +99,7 @@
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>150</y>
+      <y>180</y>
       <width>46</width>
       <height>13</height>
      </rect>
@@ -111,8 +111,8 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>110</y>
+      <x>410</x>
+      <y>80</y>
       <width>46</width>
       <height>13</height>
      </rect>
@@ -124,8 +124,8 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>110</y>
+      <x>410</x>
+      <y>130</y>
       <width>31</width>
       <height>16</height>
      </rect>
@@ -137,9 +137,9 @@
    <widget class="QLineEdit" name="bases">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>110</y>
-      <width>41</width>
+      <x>410</x>
+      <y>150</y>
+      <width>121</width>
       <height>20</height>
      </rect>
     </property>
