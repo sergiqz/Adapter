@@ -1,5 +1,5 @@
 #include "factoryrec.h"
-factoryrec* factoryrec::instance=nullptr;
+factoryrec* factoryrec::instance=0;
 factoryrec::factoryrec()
 {
     base=10;
@@ -8,8 +8,8 @@ factoryrec::factoryrec()
 }
 
 factoryrec* factoryrec::get_instance(){
-    if(instance==nullptr){
-        instance=new factoryrec();
+    if(instance==0){
+        instance=new factoryrec;
     }
     return instance;
 

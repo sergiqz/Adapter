@@ -1,5 +1,5 @@
 #include "factorycir.h"
-factorycir* factorycir::instance=nullptr;
+factorycir* factorycir::instance=0;
 factorycir::factorycir()
 {
     radio=10;
@@ -7,7 +7,7 @@ factorycir::factorycir()
 }
 
 factorycir* factorycir::get_instance(){
-    if(instance==nullptr){
+    if(instance==0){
         instance=new factorycir();
     }
     return instance;

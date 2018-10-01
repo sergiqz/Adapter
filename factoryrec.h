@@ -8,6 +8,7 @@ private:
     int altura;
     int base;
     string color;
+    //static rectangulo *s_pool[];
     factoryrec();
 public:
     static factoryrec* instance;

@@ -29,10 +29,10 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    adapterrec *adp;
+    vector<adapterrec*>adp;
     vector<rectangulo*>reg;
     vector<circle*>cir;
-    adaptercir *adc;
+    vector<adaptercir*>adc;
     QPixmap *pixmap;
     QPen *lapiz;
     QPainter *q;
