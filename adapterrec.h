@@ -11,7 +11,6 @@
 class adapterrec
 {
     rectangulo *reg;
-    factoryrec *fac;
 
 public:
     adapterrec(rectangulo *rectangulo);

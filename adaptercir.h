@@ -5,14 +5,14 @@
 #include <QColor>
 #include <QPixmap>
 #include <QPen>
-
+#include "factorycir.h"
 class adaptercir
 {
 private:
     circle* cir;
 public:
-    adaptercir();
-    void draw(circle* circ, QPainter * painter);
+    adaptercir(circle* circ);
+    void draw(QPainter * painter);
 };
 
 #endif // ADAPTERCIR_H

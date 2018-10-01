@@ -1,12 +1,11 @@
 #include "adaptercir.h"
 
-adaptercir::adaptercir()
+adaptercir::adaptercir(circle* circ)
 {
-
-}
-void adaptercir::draw(circle* circ,QPainter * painter){
     cir=circ;
+}
+void adaptercir::draw(QPainter * painter){
     point* c;
     c=cir->getpoints();
-    painter->drawEllipse(c->get_x(),c->get_y(),60,60);
+    painter->drawEllipse(c->get_x(),c->get_y(),cir->get_radio(),cir->get_radio());
 }

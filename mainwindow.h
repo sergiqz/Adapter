@@ -4,6 +4,7 @@
 #include "adapterrec.h"
 #include <QMainWindow>
 #include <QMouseEvent>
+#include <vector>
 namespace Ui {
 class MainWindow;
 }
@@ -29,8 +30,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
     adapterrec *adp;
-    rectangulo *reg;
-    circle *cir;
+    vector<rectangulo*>reg;
+    vector<circle*>cir;
     adaptercir *adc;
     QPixmap *pixmap;
     QPen *lapiz;

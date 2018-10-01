@@ -2,7 +2,8 @@
 factoryrec* factoryrec::instance=nullptr;
 factoryrec::factoryrec()
 {
-    lado=10;
+    base=10;
+    altura=10;
     color="black";
 }
 
@@ -14,18 +15,27 @@ factoryrec* factoryrec::get_instance(){
 
 }
 
-void factoryrec::set_lado(int _lado){
-    lado=_lado;
+void factoryrec::set_lados(int _base,int _altura){
+    base=_base;
+    altura=_altura;
 }
 
-int factoryrec::get_lados(){
-    return lado;
+int factoryrec::get_base(){
+    return base;
 }
-
+int factoryrec::get_altura(){
+    return altura;
+}
 void factoryrec::set_color(string _color){
     color=_color;
 }
 
 string factoryrec::get_color(){
     return color;
+}
+void factoryrec::set_base(int _b){
+    base=_b;
+}
+void factoryrec::set_altura(int _h){
+    altura=_h;
 }

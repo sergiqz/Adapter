@@ -4,11 +4,12 @@
 #include <cmath>
 #include "shape.h"
 #include "point.h"
+#include "factorycir.h"
 using namespace std;
 class circle
 {
 private:
-    int r;
+    factorycir *fac;
     double const pi=3.1416;
     point* puntos;
 
@@ -21,6 +22,10 @@ public:
     int perimetro();
     point *getpoints();
     void setpoints(int x, int y);
+    void set_radio(int _radio);
+    int get_radio();
+    void set_color(string _color);
+    string get_color();
 
 };
 
