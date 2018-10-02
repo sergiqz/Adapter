@@ -28,6 +28,8 @@ private slots:
 
     void on_bases_editingFinished();
 
+    void on_colores_currentIndexChanged(int index);
+
 private:
     Ui::MainWindow *ui;
     vector<adapterrec*>adaprect;
@@ -37,6 +39,7 @@ private:
     QPixmap *pixmap;
     QPen *lapiz;
     QPainter *q;
+    QColor color;
     bool c;
     int altura,base,radio;
 

@@ -24,7 +24,7 @@ int cuadrilatero::perimetro()
 float cuadrilatero::area()
 {
 	int s=perimetro()/2;
-    float A= pow((s-l1)*(s-l2)*(s-l3)*(s-l4)-l1*l2*l3*l4*(pow((cos(an/2)*3.1416/180),2)),0.5);
+    float A= float(pow((s-l1)*(s-l2)*(s-l3)*(s-l4)-l1*l2*l3*l4*(pow((cos(an/2)*3.1416/180),2)),0.5));
 	return A;
 }
 point* cuadrilatero::getpoints(){

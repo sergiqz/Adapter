@@ -10,7 +10,7 @@ void rectangulo::draw(){
 	cout<<"rectangulo"<<endl;
 }
 float rectangulo::area(){
-    return fac->get_altura()*fac->get_base();
+    return float(fac->get_altura()*fac->get_base());
 }
 void rectangulo::set_base(int _b){
     fac->set_base(_b);

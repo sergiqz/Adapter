@@ -12,10 +12,8 @@ MainWindow::MainWindow(QWidget *parent) :
     pixmap->fill();
 
 
-    QColor color("black");
+    color.setNamedColor("black");
     lapiz=new QPen(color);
-    color.setNamedColor("green");
-    lapiz->setColor(color);
 
     ui->base->setPixmap(*pixmap);
     q=new QPainter(pixmap);
@@ -70,6 +68,7 @@ void MainWindow::on_cuadradito_currentIndexChanged(int index)
         {
             case 1:
             c=0;
+            on_lado_editingFinished()=d
             break;
 
             case 2:
@@ -109,4 +108,26 @@ void MainWindow::refresh(){
         adapcir[j]->draw(q);
     }
 
+}
+
+void MainWindow::on_colores_currentIndexChanged(int index)
+{
+    switch (index) {
+        case 1:
+        color.setNamedColor("red");
+        lapiz->setColor(color);
+        break;
+
+        case 2:
+        color.setNamedColor("green");
+        lapiz->setColor(color);
+        break;
+
+        default:
+        color.setNamedColor("black");
+        lapiz->setColor(color);
+        break;
+    }
+    q->setPen(*lapiz);
+    refresh();
 }

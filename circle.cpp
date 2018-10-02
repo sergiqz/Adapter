@@ -11,11 +11,11 @@ circle::~circle()
 
 }
 float circle::area(){
-    float a= pi*pow(fac->get_radio(),2);
+    float a= float(pi*pow(fac->get_radio(),2));
     return a;
 }
 int circle::perimetro(){
-    return 2*pi*fac->get_radio();
+    return int(2*pi*fac->get_radio());
 }
 void circle::draw(){
     cout<<"Circulo"<<endl;

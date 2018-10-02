@@ -14,7 +14,7 @@ class cuadrilatero : public shape
         string color;
 	public:
         cuadrilatero(int _an=0,int _l1=0,int _l2=0,int _l3=0,int _l4=0);
-        ~cuadrilatero();
+        virtual ~cuadrilatero();
 		void draw();
         float area();
 		int perimetro();
