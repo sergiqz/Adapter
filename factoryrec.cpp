@@ -2,8 +2,8 @@
 factoryrec* factoryrec::instance=0;
 factoryrec::factoryrec()
 {
-    base=10;
-    altura=10;
+    base=0;
+    altura=0;
     color="black";
 }
 

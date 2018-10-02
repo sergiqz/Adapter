@@ -20,17 +20,19 @@ MainWindow::MainWindow(QWidget *parent) :
     q->setPen(*lapiz);
     //factoryrec::get_instance();
 
-    rectangulo*aux=new rectangulo(10,10);
+    rectangulo*aux=new rectangulo();
 
-    factoryrec::get_instance()->set_altura(100);
+    factoryrec::get_instance()->set_altura(0);
     aux->setpoints(100,100);
     vecrect.push_back(aux);
 
-    circle*aux2=new circle(10);
+    circle*aux2=new circle(0);
     factorycir::get_instance();
     aux2->setpoints(60,60);
     cir.push_back(aux2);
-
+    ui->lado->setDisabled(true);
+    ui->bases->setDisabled(true);
+    ui->radio->setDisabled(true);
 
 }
 
@@ -64,15 +66,27 @@ void MainWindow::mousePressEvent(QMouseEvent *event){
 }
 void MainWindow::on_cuadradito_currentIndexChanged(int index)
 {
+
     switch(index)
         {
+            case 0:
+            ui->lado->setDisabled(true);
+            ui->bases->setDisabled(true);
+            ui->radio->setDisabled(true);
+            break;
+
             case 1:
             c=0;
-            on_lado_editingFinished()=d
+            ui->radio->setDisabled(true);
+            ui->lado->setDisabled(false);
+            ui->bases->setDisabled(false);
             break;
 
             case 2:
             c=1;
+            ui->lado->setDisabled(true);
+            ui->bases->setDisabled(true);
+            ui->radio->setDisabled(false);
             break;
         }
 }

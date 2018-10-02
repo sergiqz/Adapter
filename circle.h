@@ -15,7 +15,7 @@ private:
 
 public:
 
-    circle(int radio=5);
+    circle(int radio=0);
     virtual ~circle();
     void draw();
     float area();

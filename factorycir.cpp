@@ -2,7 +2,7 @@
 factorycir* factorycir::instance=0;
 factorycir::factorycir()
 {
-    radio=10;
+    radio=0;
     color="black";
 }
 

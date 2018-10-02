@@ -11,7 +11,7 @@ class rectangulo : public cuadrilatero
 	private:
         factoryrec *fac;
 	public:
-        rectangulo(int _base=10,int _altura=10);
+        rectangulo(int _base=0,int _altura=0);
         virtual ~rectangulo();
 		void draw();
 		float area();
