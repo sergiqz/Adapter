@@ -24,8 +24,10 @@ int factorycir::get_radio(){
 
 void factorycir::set_color(string _color){
     color=_color;
+   //painterfactorycir->setBrush(QColor(255, 0, 0, 127));
 }
 
 string factorycir::get_color(){
     return color;
 }
+

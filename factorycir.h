@@ -1,6 +1,11 @@
 #ifndef FACTORYCIR_H
 #define FACTORYCIR_H
 #include <iostream>
+#include <QPointF>
+#include <QPainter>
+#include <QColor>
+#include <QPixmap>
+#include <QPen>
 using namespace std;
 class factorycir
 {
@@ -8,6 +13,7 @@ private:
     int radio;
     string color;
     factorycir();
+    QPainter *painterfactorycir;
 public:
     static factorycir* instance;
     static factorycir* get_instance();
