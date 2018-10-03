@@ -10,15 +10,25 @@ MainWindow::MainWindow(QWidget *parent) :
 
     pixmap=new QPixmap(400,300);
     pixmap->fill();
-
+    //circulo=new QPixmap(400,300);
+    //circulo->fill();
 
     color.setNamedColor("black");
+    colorcir=(0, 0, 0, 0);
     lapiz=new QPen(color);
+    lapizcirculo=new QPen(colorcir);
 
     ui->base->setPixmap(*pixmap);
     q=new QPainter(pixmap);
-    q->setPen(*lapiz);
+    //circulitos=new QPainter(pixmap)
+    //q->setPen(*lapiz);
     //factoryrec::get_instance();
+    /*lapizcirculo=new QPen(color);
+    circulitos=new QPainter(pixmap);
+    circulitos->setPen(*lapizcirculo);
+*/
+
+
 
     rectangulo*aux=new rectangulo();
 
@@ -42,7 +52,9 @@ MainWindow::~MainWindow()
 }
 void MainWindow::mousePressEvent(QMouseEvent *event){
      ui->base->setPixmap(*pixmap);
+
     if(!c){
+       // q->setPen(*lapiz);
         rectangulo*aux1=new rectangulo();
         aux1->set_altura(altura);
         aux1->set_base(base);
@@ -54,13 +66,15 @@ void MainWindow::mousePressEvent(QMouseEvent *event){
 
     }
     else{
+       // q->setPen(*lapizcirculo);
         circle*aux=new circle();
         aux->set_radio(radio);
         aux->setpoints(event->x(),event->y());
         cir.push_back(aux);
         adaptercir* tmp2=new adaptercir(aux);
-        tmp2->draw(q);
+        tmp2->draw(q,colorcir);
         adapcir.push_back(tmp2);
+
     }
     ui->base->setPixmap(*pixmap);
 }
@@ -73,6 +87,7 @@ void MainWindow::on_cuadradito_currentIndexChanged(int index)
             ui->lado->setDisabled(true);
             ui->bases->setDisabled(true);
             ui->radio->setDisabled(true);
+            ui->colores->setDisabled(true);
             break;
 
             case 1:
@@ -100,7 +115,7 @@ void MainWindow::on_lado_editingFinished()
 }
 void MainWindow::on_radio_editingFinished()
 {
-    pixmap->fill();
+    circulo->fill();
     radio= ui->radio->text().toInt();
     cir[0]->set_radio(radio);
     refresh();
@@ -119,7 +134,7 @@ void MainWindow::refresh(){
     }
     for (int j=0; j<int(adapcir.size()); j++)
     {
-        adapcir[j]->draw(q);
+        adapcir[j]->draw(q,colorcir);
     }
 
 }
@@ -128,11 +143,21 @@ void MainWindow::on_colores_currentIndexChanged(int index)
 {
     switch (index) {
         case 1:
-        color.setNamedColor("red");
-        lapiz->setColor(color);
+            for (int j=0; j<int(adapcir.size()); j++)
+            {
+                if(c){
+                adapcir[j]->draw(q,(255, 0, 0, 127));
+                }
+            }
+
+            //colorcir.setNamedColor("green");
+            //lapizcirculo->setColor(colorcir);
+            //refresh();
+
         break;
 
         case 2:
+        //cir[0]->set_color(lapizcir);
         color.setNamedColor("green");
         lapiz->setColor(color);
         break;
@@ -142,6 +167,7 @@ void MainWindow::on_colores_currentIndexChanged(int index)
         lapiz->setColor(color);
         break;
     }
-    q->setPen(*lapiz);
-    refresh();
+    //q->setPen(*lapiz);
+    //q->setPen(*lapizcirculo);
+   // refresh();
 }
