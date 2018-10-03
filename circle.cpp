@@ -42,4 +42,3 @@ void circle::set_color(string _color){
 string circle::get_color(){
     return fac->get_color();
 }
-
