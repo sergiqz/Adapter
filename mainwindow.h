@@ -37,9 +37,13 @@ private:
     vector<circle*>cir;
     vector<adaptercir*>adapcir;
     QPixmap *pixmap;
+    QPixmap *circulo;
     QPen *lapiz;
+    QPen *lapizcirculo;
+    QPainter *circulitos;
     QPainter *q;
     QColor color;
+    QColor colorcir;
     bool c;
     int altura,base,radio;
 
