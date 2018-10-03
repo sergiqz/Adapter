@@ -13,8 +13,9 @@ MainWindow::MainWindow(QWidget *parent) :
     //circulo=new QPixmap(400,300);
     //circulo->fill();
 
-    color.setNamedColor("black");
-    colorcir=(0, 0, 0, 0);
+    //color.setNamedColor("black");
+    color.setRgb(0,0,0,255);
+    colorcir.setRgb(0,0,0,255);
     lapiz=new QPen(color);
     lapizcirculo=new QPen(colorcir);
 
@@ -61,7 +62,7 @@ void MainWindow::mousePressEvent(QMouseEvent *event){
         aux1->setpoints(event->x(),event->y());
         vecrect.push_back(aux1);
         adapterrec*tmp3=new adapterrec(aux1);
-        tmp3->draw(q);
+        tmp3->draw(q,color);
         adaprect.push_back(tmp3);
 
     }
@@ -130,7 +131,7 @@ void MainWindow::on_bases_editingFinished()
 void MainWindow::refresh(){
     for (int y = 0; y < int(adaprect.size()); y++)
     {
-        adaprect[y]->draw(q);
+        adaprect[y]->draw(q,color);
     }
     for (int j=0; j<int(adapcir.size()); j++)
     {
@@ -143,31 +144,64 @@ void MainWindow::on_colores_currentIndexChanged(int index)
 {
     switch (index) {
         case 1:
+        if(c){
+            colorcir.setRgb(255,0,0,100);
             for (int j=0; j<int(adapcir.size()); j++)
             {
-                if(c){
-                adapcir[j]->draw(q,(255, 0, 0, 127));
-                }
-            }
 
-            //colorcir.setNamedColor("green");
-            //lapizcirculo->setColor(colorcir);
-            //refresh();
+
+                adapcir[j]->draw(q,colorcir);
+
+            }
+        }else{
+            color.setRgb(255,0,0,100);
+            for (int j=0; j<int(adaprect.size()); j++)
+            {
+                adaprect[j]->draw(q,color);
+            }
+        }
+
 
         break;
 
         case 2:
-        //cir[0]->set_color(lapizcir);
-        color.setNamedColor("green");
-        lapiz->setColor(color);
-        break;
+        if(c){
+            colorcir.setRgb(0,255,0,100);
+            for (int j=0; j<int(adapcir.size()); j++)
+            {
+
+
+                adapcir[j]->draw(q,colorcir);
+
+            }
+        }else{
+            color.setRgb(0,255,0,100);
+            for (int j=0; j<int(adaprect.size()); j++)
+            {
+                adaprect[j]->draw(q,color);
+            }
+        }
 
         default:
-        color.setNamedColor("black");
-        lapiz->setColor(color);
+        if(c){
+            colorcir.setRgb(0,0,0,255);
+            for (int j=0; j<int(adapcir.size()); j++)
+            {
+
+
+                adapcir[j]->draw(q,colorcir);
+
+            }
+        }else{
+            color.setRgb(0,0,0,255);
+            for (int j=0; j<int(adaprect.size()); j++)
+            {
+                adaprect[j]->draw(q,color);
+            }
+        }
         break;
     }
     //q->setPen(*lapiz);
-    //q->setPen(*lapizcirculo);
+    q->setPen(*lapizcirculo);
    // refresh();
 }

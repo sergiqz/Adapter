@@ -15,7 +15,7 @@ class adapterrec
 public:
     adapterrec(rectangulo *rectangulo);
 
-    void draw(QPainter *painter);
+    void draw(QPainter * painter,QColor color);
 
 };
 
